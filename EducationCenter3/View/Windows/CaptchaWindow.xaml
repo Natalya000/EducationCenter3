@@ -1,0 +1,36 @@
+﻿<Window x:Class="EducationCenter3.View.Windows.CaptchaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EducationCenter3.View.Windows"
+        mc:Ignorable="d"
+                Title="Капча" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="CaptchaLb"
+                 SelectionChanged="CaptchaLb_SelectionChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2" Rows="3"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+        <ListBox Name="CaptchaFragmentsLb" Grid.Column="2"
+                 SelectionChanged="CaptchaFragmentsLb_SelectionChanged">
+            <Image Width="170" Tag="3" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\3.png"/>
+            <Image Width="170" Tag="1" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\1.png"/>
+            <Image Width="170" Tag="6" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\6.png"/>
+            <Image Width="170" Tag="4" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\4.png"/>
+            <Image Width="170" Tag="5" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\5.png"/>
+            <Image Width="170" Tag="2" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\2.png"/>
+        </ListBox>
+    </Grid>
+</Window>
