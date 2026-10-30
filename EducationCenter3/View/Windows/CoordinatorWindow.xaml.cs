@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Castle.Core.Resource;
+using EducationCenter3.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,24 @@ namespace EducationCenter3.View.Windows
     /// </summary>
     public partial class CoordinatorWindow : Window
     {
+        EducationCenterContext context = new EducationCenterContext();
+
+        List<Role> roles = new List<Role>();
         public CoordinatorWindow()
         {
             InitializeComponent();
+            UserLv.ItemsSource = context.Users.ToList();
+                
+        }
+
+        private void StartFiltersSearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void LoadFilters()
+        {
+            roles.Insert(0, new Role() { Name = "Все роли" });
+            FilerByRoleCmb.ItemsSource = roles;
         }
     }
 }
