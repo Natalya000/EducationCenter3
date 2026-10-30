@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationCenter3.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,29 @@ namespace EducationCenter3.View.Windows
     /// </summary>
     public partial class CoordinatorWindow : Window
     {
+        EducationCenterContext context = new EducationCenterContext();
+
+        List<Role> roles = new List<Role>();
+        
         public CoordinatorWindow()
         {
             InitializeComponent();
+
+            roles = context.Roles.ToList();
+
+            UsersLv.ItemsSource = context.Users.ToList();
+        }
+
+        private void StartFiltersSearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoadFilters()
+        {
+            roles.Insert(0, new Role() { Name = "Все роли" });
+
+            FilterByRoleCmb.ItemsSource = context.Roles.ToList();
         }
     }
 }
