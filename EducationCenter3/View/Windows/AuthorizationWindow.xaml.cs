@@ -25,6 +25,9 @@ namespace EducationCenter3.View.Windows
         public AuthorizationWindow()
         {
             InitializeComponent();
+
+            LoginTb.Text = Properties.Settings.Default.UserLogin;
+            PasswordPb.Password = Properties.Settings.Default.UserPassword;
         }
 
 

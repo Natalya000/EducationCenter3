@@ -14,16 +14,16 @@
             <ColumnDefinition Width="0.4*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Name="CaptchaLb"
+        <ListBox Name="CaptchaLb" 
                  SelectionChanged="CaptchaLb_SelectionChanged">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="2" Rows="3"/>
+                    <UniformGrid Columns="2" Rows="3" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
 
-        <ListBox Name="CaptchaFragmentsLb" Grid.Column="2"
+        <ListBox Name="CaptchaFragmentsLb" Grid.Column="2" 
                  SelectionChanged="CaptchaFragmentsLb_SelectionChanged">
             <Image Width="170" Tag="3" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\3.png"/>
             <Image Width="170" Tag="1" Source="C:\Users\Наталья\source\repos\EducationCenter\EducationCenter\Images\1.png"/>
